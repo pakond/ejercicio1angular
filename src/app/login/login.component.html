@@ -1,0 +1,20 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    Nombre:
+    <input type="text" formControl="name" id="name">
+    <div *ngIf="name.errors.required">
+        Nombre es obligatorio.
+    </div>
+    <div *ngIf="name.errors.minlength">
+        Nombre debe tener 4 caracteres.
+    </div>
+
+    Contraseña:
+    <input type="password" formControl="password" id="password">
+    <div *ngIf="password.errors.required">
+        Contraseña es obligatoria.
+    </div>
+    <div *ngIf="password.errors.minlength">
+        Contraseña debe tener 4 caracteres.
+    </div>
+    <button type="submit">Login</button>
+</form>
