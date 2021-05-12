@@ -1,0 +1,6 @@
+<h1>Página Home</h1>
+<ul>Lista Usuarios</ul>
+    <li *ngFor="let usuario of listaUsuarios" (click)="listarUsuario(usuario)">{{ usuario.name }}</li>
+<br />
+<div id="usuario">
+</div>

@@ -1,19 +1,19 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     Nombre:
-    <input type="text" formControl="name" id="name">
-    <div *ngIf="name.errors.required">
+    <input type="text" formControlName="name" id="name">
+    <div *ngIf="registerFormControl.name.errors?.required">
         Nombre es obligatorio.
     </div>
-    <div *ngIf="name.errors.minlength">
+    <div *ngIf="registerFormControl.name.errors?.minlength">
         Nombre debe tener 4 caracteres.
     </div>
 
     Contraseña:
-    <input type="password" formControl="password" id="password">
-    <div *ngIf="password.errors.required">
+    <input type="password" formControlName="password" id="password">
+    <div *ngIf="registerFormControl.password.errors?.required">
         Contraseña es obligatoria.
     </div>
-    <div *ngIf="password.errors.minlength">
+    <div *ngIf="registerFormControl.password.errors?.minlength">
         Contraseña debe tener 4 caracteres.
     </div>
     <button type="submit">Login</button>
