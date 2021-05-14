@@ -9,6 +9,7 @@ import { UserInterface } from '../userinterface'
 export class HomeComponent implements OnInit {
 
   listaUsuarios: UserInterface[] = []
+  detalleUsuario: UserInterface = null
   
 
   constructor() { }
@@ -23,8 +24,7 @@ export class HomeComponent implements OnInit {
   }
 
   listarUsuario(usuario: UserInterface): void {
-    let divusuario = document.getElementById('usuario');
-    divusuario.textContent = `Usuario: ${usuario.name} ID: ${usuario.id}`;
+    this.detalleUsuario = usuario
   }
 
 }
